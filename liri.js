@@ -100,12 +100,9 @@ switch (liriOption) {
 	case "spotify-this-song":
 
 		var songName = "";
-
+	
 		// if song name has more than one word, we concatenate it together with plus signs instead of spaces
 		// because the spotify api requires the query to be a contiguous string 
-			var songName = "";
-	
-		// detect a multi-word song name
 		if (nodeArgs.length > 3) {
 			for (var i = 3; i < nodeArgs.length; i++) {
 
@@ -118,8 +115,8 @@ switch (liriOption) {
 
 		   		songName += nodeArgs[i];
 
-	 	 	  } // end if 
-			} // end for loop
+ 	 	      } // end concatenation conditional 
+		    } // end of multi-word detection
 		
 		// if no song is provided in the command line
 		} else { 
@@ -132,7 +129,42 @@ switch (liriOption) {
 		// search Spotify for the song name provided in command line
 		searchSpotify(songName, 0);
 
-		break;
+	break;
+
+	case "movie-this":
+
+	 	var movieName = "";
+
+ 		// if movie name has more than one word, we concatenate it together with plus signs instead of spaces
+		// because the OMDB api requires the query to be a contiguous string
+		if (nodeArgs.length > 3) {
+			for (var i = 3; i < nodeArgs.length; i++) {
+
+			  if (i > 3 && i < nodeArgs.length) {
+
+			  	// concatenate the name with plus signs
+		   		movieName = movieName + "+" + nodeArgs[i];
+
+		  	  } else {
+
+		   		movieName += nodeArgs[i];
+
+	 	 	  } // end concatenation conditional 
+			} // end of multi-word detection
+		
+		// if no song is provided in the command line
+		} else { 
+
+			movieName = "mr+nobody";
+
+		} // end concatenate movie name
+
+		// search OMDB for the movie name provided in command line
+		searchMovie(movieName); 
+			
+	break;
+
+
 
 
 
