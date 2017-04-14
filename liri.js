@@ -26,7 +26,7 @@ function getTweets (tweetCount) {
 
 		console.log("\nMy last " + tweetCount + " Tweets:");
 
-		for (let i = 0; i < tweetCount, i++) {
+		for (let i = 0; i < tweetCount; i++) {
 
 		console.log("\nCreated: " + tweets[i].created_at);
 		console.log("Tweet text: " + tweets[i].text);
@@ -35,7 +35,7 @@ function getTweets (tweetCount) {
 
 	}); // end Twitter API request
 
-} // end getTweets function
+}  // end getTweets function
 
 // function to search Spotify for song details
 
@@ -57,7 +57,8 @@ function searchSpotify (trackName, itemNum) {
 
 	 }); // end function to search Spotify
 
-// function to search OMDB using the request package
+} // function to search OMDB using the request package
+
 
 function searchMovie (flicName) {
 
@@ -86,6 +87,7 @@ function searchMovie (flicName) {
    		}); // ending the OMDB query request
 
 } // end function searchMovie
+
 
 // command handler switch statement
 
@@ -164,7 +166,7 @@ switch (liriOption) {
 			
 	break;
 
-	case "do-what-it-says";
+	case "do-what-it-says":
 
 		// load Liri command and query info from an external file
 		fs.readFile("random.txt", "utf8", function(error,data) {
@@ -182,13 +184,13 @@ switch (liriOption) {
 		argName = dataArr[0];
 
 		// detect if the query string has multiple words
-		if (dataArr > 1) {
+		if (dataArr.length > 1) {
 
 			// concatenate each additional word into the query variable
 			// adding pluses instead of spaces between each word
-			for (var i = 1, dataArr.length; i++) {
+			for (var i = 1; dataArr.length; i++) {
 			 
-			 argName = argName + "+" dataArr[i];
+			 argName = argName + "+"  + dataArr[i];
 
 			} // end the concatenation loop
 
@@ -198,7 +200,7 @@ switch (liriOption) {
 		switch (commandName) {
 
 			// call the corresponding function, passing the query string if applicable
-			case "my-tweets"
+			case "my-tweets":
 
 				getTweets(20);
 
