@@ -164,6 +164,38 @@ switch (liriOption) {
 			
 	break;
 
+	case "do-what-it-says";
+
+		// load Liri command and query info from an external file
+		fs.readFile("random.txt", "utf8", function(error,data) {
+
+		// split the Liri command from the query string
+		var argArr = data.split(",");
+
+		// assign the Liri command to a variable
+		var commandName = argArr[0];
+
+		// split the query string into an array
+		var dataArr = argArr[1].split(" ");
+
+		// assign the first word of the query string to a variable
+		argName = dataArr[0];
+
+		// detect if the query string has multiple words
+		if (dataArr > 1) {
+
+			// concatenate each additional word into the query variable
+			// adding pluses instead of spaces between each word
+			for (var i = 1, dataArr.length; i++) {
+			 
+			 argName = argName + "+" dataArr[i];
+
+			} // end the concatenation loop
+
+		} // end multi-word processing conditional
+
+
+
 
 
 
