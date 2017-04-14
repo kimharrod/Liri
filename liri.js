@@ -101,15 +101,17 @@ switch (liriOption) {
 
 		var songName = "";
 
-		// if song name has more than one word, we concatenate it together with + signs instead of spaces
+		// if song name has more than one word, we concatenate it together with plus signs instead of spaces
 		// because the spotify api requires the query to be a contiguous string 
 			var songName = "";
-
+	
+		// detect a multi-word song name
 		if (nodeArgs.length > 3) {
 			for (var i = 3; i < nodeArgs.length; i++) {
 
 			  if (i > 3 && i < nodeArgs.length) {
 
+			  	// concatenate the name with plus signs
 		   		songName = songName + "+" + nodeArgs[i];
 
 		  	  } else {
@@ -119,13 +121,15 @@ switch (liriOption) {
 	 	 	  } // end if 
 			} // end for loop
 		
+		// if no song is provided in the command line
 		} else { 
 
 			searchSpotify('the+sign', 3);
 			break;
 
-		} // end if nodeArgs > 3
+		} // end concatenate song name
 
+		// search Spotify for the song name provided in command line
 		searchSpotify(songName, 0);
 
 		break;
