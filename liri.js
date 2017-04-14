@@ -128,7 +128,7 @@ switch (liriOption) {
 
 		// search Spotify for the song name provided in command line
 		searchSpotify(songName, 0);
-
+	
 	break;
 
 	case "movie-this":
@@ -193,6 +193,42 @@ switch (liriOption) {
 			} // end the concatenation loop
 
 		} // end multi-word processing conditional
+
+		// nested switch to handle the command in the external file
+		switch (commandName) {
+
+			// call the corresponding function, passing the query string if applicable
+			case "my-tweets"
+
+				getTweets(20);
+
+			break;
+
+			case "spotify-this-song":
+
+				searchSpotify(argname,0);
+
+			break;
+
+			case "movie-this":
+
+				searchMovie(argName);
+
+			break;
+
+			default:
+				console.log("No matching command argument in random.txt file");
+
+		} // end of do-what-it-says switch
+
+		}); // end of the read file callback function
+
+	break;
+
+	default:
+		console.log("No matching command argument");
+
+} // end command handler switch statement
 
 
 
