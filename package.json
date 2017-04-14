@@ -1,0 +1,24 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "liri_node_app",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimharrod/Liri.git"
+  },
+  "keywords": [
+    "twitter",
+    "spotify",
+    "OMDB"
+  ],
+  "author": "Kimberly Harrod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimharrod/Liri/issues"
+  },
+  "homepage": "https://github.com/kimharrod/Liri#readme"
+}
