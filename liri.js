@@ -188,7 +188,7 @@ switch (liriOption) {
 
 			// concatenate each additional word into the query variable
 			// adding pluses instead of spaces between each word
-			for (var i = 1; dataArr.length; i++) {
+			for (var i = 1; i < dataArr.length; i++) {
 			 
 			 argName = argName + "+"  + dataArr[i];
 
@@ -208,7 +208,7 @@ switch (liriOption) {
 
 			case "spotify-this-song":
 
-				searchSpotify(argname,0);
+				searchSpotify(argName,0);
 
 			break;
 
